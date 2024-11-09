@@ -1,79 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Accordion } from './components/accordion/Accordion';
+import { Rating } from './components/rating/Rating';
 
 function App() {
   console.log('App rendering');
   
   return (
     <div className="App">
-      <AppTitle/>
-      <Rating />
-      <Accordion />
+      <SectionTitle title = 'This is App component'/>
+      <SectionTitle title = 'My friends'/>
+      Article 1
+      <Rating value ={3}/>
+      <Accordion title = 'Menu'/>
+      Article 2
+      <Rating value ={4}/>
     </div>
   );
 }
 
-export const AppTitle = () => {
-  console.log('AppTitle rendering');
+const SectionTitle = (props: any) => {
+  console.log('SectionTitle rendering');
 
   return (
-    <>This is App component</>
-  )
-}
-
-
-export const Rating = () => {
-  console.log('Rating rendering');
-
-  return (
-    <>
-      <Star />
-      <Star />
-      <Star />
-      <Star />
-      <Star />
-    </>
-  )
-}
-
-export const Star = () => {
-  console.log('Star rendering');
-
-  return (
-    <div>Star</div>
-  )
-}
-
-
-export const Accordion = () => {
-  console.log('Accordion rendering');
-
-  return (
-    <div>
-      <AccordionTitle/>
-      <AccordionBody/>
-    </div>
-  )
-}
-
-export const AccordionTitle = () => {
-  console.log('AccordionTitle rendering');
-
-  return (
-    <h3>Menu</h3>
-  )
-}
-
-export const AccordionBody = () => {
-  console.log('AccordionBody rendering');
-
-  return (
-    <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>  
+    <h1>{props.title}</h1>
   )
 }
 
