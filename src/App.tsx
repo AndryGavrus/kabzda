@@ -9,18 +9,22 @@ function App() {
   
   return (
     <div className="App">
-      <SectionTitle title = 'This is App component'/>
-      <SectionTitle title = 'My friends'/>
+      <SectionTitle title = {'This is App component'}/>
+      <SectionTitle title = {'My friends'}/>
       Article 1
       <Rating value ={3}/>
-      <Accordion title = 'Menu'/>
+      <Accordion titleValue = {'Menu'} collapsed ={false}/>
+      <Accordion titleValue = {'Friends'} collapsed ={true}/>
       Article 2
       <Rating value ={4}/>
     </div>
   );
 }
 
-const SectionTitle = (props: any) => {
+type SectionTitlePropsType ={
+  title: string
+}
+const SectionTitle = (props: SectionTitlePropsType) => {
   console.log('SectionTitle rendering');
 
   return (
