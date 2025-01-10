@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import { Accordion } from './components/accordion/Accordion';
 import { Rating } from './components/rating/Rating';
+import OnOff from './components/onOff/OnOff';
+import { UncontrolledAccardion } from './components/accordion/UncontrolledAccardion';
+import { UncontrolledRating } from './components/rating/UncontrolledRating';
 
 function App() {
   console.log('App rendering');
@@ -12,11 +15,14 @@ function App() {
       <SectionTitle title = {'This is App component'}/>
       <SectionTitle title = {'My friends'}/>
       Article 1
-      <Rating value ={3}/>
-      <Accordion titleValue = {'Menu'} collapsed ={false}/>
-      <Accordion titleValue = {'Friends'} collapsed ={true}/>
+      <UncontrolledRating/>
+      <UncontrolledAccardion titleValue = {'Menu'} />
+      <UncontrolledAccardion titleValue = {'Friends'}/>
       Article 2
-      <Rating value ={4}/>
+      <UncontrolledRating/>
+      <OnOff/>
+      <OnOff/>
+      <OnOff/>
     </div>
   );
 }
