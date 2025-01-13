@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Accordion } from './components/accordion/Accordion';
@@ -9,6 +9,9 @@ import { UncontrolledRating } from './components/rating/UncontrolledRating';
 
 function App() {
   console.log('App rendering');
+
+  let [accordionCollapsed, setAccordionCollapsed] = useState(true)
+  let [ratingValue, setRatingValue] = useState(0)
   
   return (
     <div className="App">
@@ -23,6 +26,8 @@ function App() {
       <OnOff/>
       <OnOff/>
       <OnOff/>
+      <Accordion collapsed={accordionCollapsed} titleValue={'Work'} onClick={setAccordionCollapsed}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
     </div>
   );
 }
