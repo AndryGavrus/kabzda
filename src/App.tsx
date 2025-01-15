@@ -6,12 +6,14 @@ import { Rating } from './components/rating/Rating';
 import OnOff from './components/onOff/OnOff';
 import { UncontrolledAccardion } from './components/accordion/UncontrolledAccardion';
 import { UncontrolledRating } from './components/rating/UncontrolledRating';
+import UncontrolledOnOff from './components/onOff/UncontrolledOnOff';
 
 function App() {
   console.log('App rendering');
 
   let [accordionCollapsed, setAccordionCollapsed] = useState(true)
   let [ratingValue, setRatingValue] = useState(0)
+  let [onValue, setOnValue] = useState(false)
   
   return (
     <div className="App">
@@ -20,12 +22,11 @@ function App() {
       Article 1
       <UncontrolledRating/>
       <UncontrolledAccardion titleValue = {'Menu'} />
-      <UncontrolledAccardion titleValue = {'Friends'}/>
       Article 2
       <UncontrolledRating/>
-      <OnOff/>
-      <OnOff/>
-      <OnOff/>
+      <UncontrolledOnOff/>
+      <SectionTitle title = {'Controlled'}/>
+      <OnOff on={onValue} onClick = {setOnValue}/>
       <Accordion collapsed={accordionCollapsed} titleValue={'Work'} onClick={setAccordionCollapsed}/>
       <Rating value={ratingValue} onClick={setRatingValue}/>
     </div>
