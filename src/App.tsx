@@ -7,6 +7,8 @@ import OnOff from './components/onOff/OnOff';
 import { UncontrolledAccardion } from './components/accordion/UncontrolledAccardion';
 import { UncontrolledRating } from './components/rating/UncontrolledRating';
 import UncontrolledOnOff from './components/onOff/UncontrolledOnOff';
+import { TrackValueOfUncontrolledInput } from './components/rating/inputElement/TrackValueOfUncontrolledInput';
+import { GetValueOfUncontrolledInputByButtonPress } from './components/rating/inputElement/GetValueOfUncontrolledInputByButtonPress';
 
 function App() {
   console.log('App rendering');
@@ -29,6 +31,8 @@ function App() {
       <OnOff on={onValue} onClick = {setOnValue}/>
       <Accordion collapsed={accordionCollapsed} titleValue={'Work'} onClick={setAccordionCollapsed}/>
       <Rating value={ratingValue} onClick={setRatingValue}/>
+      <TrackValueOfUncontrolledInput/>
+      <GetValueOfUncontrolledInputByButtonPress/>
     </div>
   );
 }
