@@ -9,6 +9,7 @@ import { UncontrolledRating } from './components/rating/UncontrolledRating';
 import UncontrolledOnOff from './components/onOff/UncontrolledOnOff';
 import { TrackValueOfUncontrolledInput } from './components/rating/inputElement/TrackValueOfUncontrolledInput';
 import { GetValueOfUncontrolledInputByButtonPress } from './components/rating/inputElement/GetValueOfUncontrolledInputByButtonPress';
+import { ControlledCheckBox, ControlledInput, ControlledSelect } from './controlled/ControlledFeatures';
 
 function App() {
   console.log('App rendering');
@@ -33,6 +34,9 @@ function App() {
       <Rating value={ratingValue} onClick={setRatingValue}/>
       <TrackValueOfUncontrolledInput/>
       <GetValueOfUncontrolledInputByButtonPress/>
+      <ControlledInput/>
+      <ControlledCheckBox/>
+      <ControlledSelect/>
     </div>
   );
 }
